@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		392E45332BD0E905007ED0DB /* codegen_6620b1252011a in Resources */ = {isa = PBXBuildFile; fileRef = 392E45322BD0E905007ED0DB /* codegen_6620b1252011a */; };
+		39069DD42BD16E1B0037D542 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 39069DD32BD16E1B0037D542 /* SwiftUICharts */; };
 		392E45392BD0E966007ED0DB /* Recent_links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E45342BD0E966007ED0DB /* Recent_links.swift */; };
 		392E453A2BD0E966007ED0DB /* Top_links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E45352BD0E966007ED0DB /* Top_links.swift */; };
 		392E453B2BD0E966007ED0DB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E45362BD0E966007ED0DB /* Data.swift */; };
 		392E453C2BD0E966007ED0DB /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E45372BD0E966007ED0DB /* Json4Swift_Base.swift */; };
 		392E453D2BD0E966007ED0DB /* Overall_url_chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E45382BD0E966007ED0DB /* Overall_url_chart.swift */; };
-		392E45402BD0F262007ED0DB /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E453F2BD0F262007ED0DB /* NavigationBar.swift */; };
 		392E45482BD0FDB4007ED0DB /* DashboardPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E45472BD0FDB4007ED0DB /* DashboardPreviewView.swift */; };
 		392E454A2BD0FE5E007ED0DB /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E45492BD0FE5E007ED0DB /* NavBarView.swift */; };
 		392E454C2BD10096007ED0DB /* TopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E454B2BD10096007ED0DB /* TopData.swift */; };
@@ -30,13 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		392E45322BD0E905007ED0DB /* codegen_6620b1252011a */ = {isa = PBXFileReference; lastKnownFileType = folder; path = codegen_6620b1252011a; sourceTree = "<group>"; };
 		392E45342BD0E966007ED0DB /* Recent_links.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recent_links.swift; sourceTree = "<group>"; };
 		392E45352BD0E966007ED0DB /* Top_links.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top_links.swift; sourceTree = "<group>"; };
 		392E45362BD0E966007ED0DB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		392E45372BD0E966007ED0DB /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
 		392E45382BD0E966007ED0DB /* Overall_url_chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overall_url_chart.swift; sourceTree = "<group>"; };
-		392E453F2BD0F262007ED0DB /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		392E45472BD0FDB4007ED0DB /* DashboardPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPreviewView.swift; sourceTree = "<group>"; };
 		392E45492BD0FE5E007ED0DB /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		392E454B2BD10096007ED0DB /* TopData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopData.swift; sourceTree = "<group>"; };
@@ -58,25 +55,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39069DD42BD16E1B0037D542 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		392E453E2BD0F24E007ED0DB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				392E453F2BD0F262007ED0DB /* NavigationBar.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		39B7A1352BD03D9800356E9C = {
 			isa = PBXGroup;
 			children = (
-				392E454D2BD12139007ED0DB /* LinkView.swift */,
-				392E45492BD0FE5E007ED0DB /* NavBarView.swift */,
 				39B7A1402BD03D9800356E9C /* Openin_App */,
 				39B7A13F2BD03D9800356E9C /* Products */,
 			);
@@ -93,8 +81,8 @@
 		39B7A1402BD03D9800356E9C /* Openin_App */ = {
 			isa = PBXGroup;
 			children = (
-				392E453E2BD0F24E007ED0DB /* Views */,
-				392E45322BD0E905007ED0DB /* codegen_6620b1252011a */,
+				392E454D2BD12139007ED0DB /* LinkView.swift */,
+				392E45492BD0FE5E007ED0DB /* NavBarView.swift */,
 				39B7A1412BD03D9800356E9C /* Openin_AppApp.swift */,
 				392E45362BD0E966007ED0DB /* Data.swift */,
 				392E45372BD0E966007ED0DB /* Json4Swift_Base.swift */,
@@ -106,11 +94,9 @@
 				39B7A1572BD0435100356E9C /* Extensions.swift */,
 				39BB8ED72BD0CFBB00A3A726 /* DashboardViewModel.swift */,
 				39BB8EDB2BD0DED600A3A726 /* EnvLoader.swift */,
-				39B7A1452BD03D9A00356E9C /* Assets.xcassets */,
-				39B7A1472BD03D9A00356E9C /* Preview Content */,
-				39BB8ED92BD0DE4500A3A726 /* .env */,
 				392E45472BD0FDB4007ED0DB /* DashboardPreviewView.swift */,
 				392E454F2BD14603007ED0DB /* TaskBarView.swift */,
+				39B7A1472BD03D9A00356E9C /* Preview Content */,
 			);
 			path = Openin_App;
 			sourceTree = "<group>";
@@ -118,6 +104,8 @@
 		39B7A1472BD03D9A00356E9C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				39B7A1452BD03D9A00356E9C /* Assets.xcassets */,
+				39BB8ED92BD0DE4500A3A726 /* .env */,
 				39B7A1482BD03D9A00356E9C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -139,6 +127,9 @@
 			dependencies = (
 			);
 			name = Openin_App;
+			packageProductDependencies = (
+				39069DD32BD16E1B0037D542 /* SwiftUICharts */,
+			);
 			productName = Openin_App;
 			productReference = 39B7A13E2BD03D9800356E9C /* Openin_App.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 39B7A1352BD03D9800356E9C;
+			packageReferences = (
+				39069DD22BD16E1B0037D542 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 39B7A13F2BD03D9800356E9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -184,7 +178,6 @@
 			files = (
 				39BB8EDA2BD0DE4500A3A726 /* .env in Resources */,
 				39B7A1492BD03D9A00356E9C /* Preview Assets.xcassets in Resources */,
-				392E45332BD0E905007ED0DB /* codegen_6620b1252011a in Resources */,
 				39B7A1462BD03D9A00356E9C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,7 +195,6 @@
 				392E454C2BD10096007ED0DB /* TopData.swift in Sources */,
 				392E453C2BD0E966007ED0DB /* Json4Swift_Base.swift in Sources */,
 				39B7A1582BD0435100356E9C /* Extensions.swift in Sources */,
-				392E45402BD0F262007ED0DB /* NavigationBar.swift in Sources */,
 				392E453A2BD0E966007ED0DB /* Top_links.swift in Sources */,
 				39BB8EDC2BD0DED600A3A726 /* EnvLoader.swift in Sources */,
 				392E453B2BD0E966007ED0DB /* Data.swift in Sources */,
@@ -420,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		39069DD22BD16E1B0037D542 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.2";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39069DD32BD16E1B0037D542 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39069DD22BD16E1B0037D542 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39B7A1362BD03D9800356E9C /* Project object */;
 }

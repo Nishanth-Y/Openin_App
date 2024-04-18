@@ -42,7 +42,7 @@ struct TopData: View {
                         .foregroundStyle(Color.blue, .primary)
                         .padding(.trailing, 70.0)
                     let subLocation = (response.response?.top_location?.prefix(6) ?? "") + ".."
-                    Text(subLocation ?? "")
+                    Text(subLocation)
                         .foregroundStyle(Color.black)
                         .foregroundStyle(.white)
                         .font(.system(size: 20))

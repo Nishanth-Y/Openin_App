@@ -27,6 +27,10 @@ struct NavBarView: View {
             .padding(EdgeInsets(top: 40, leading: 10, bottom: 40, trailing: 10))
             .background(Color.blue)
         }
+        .safeAreaInset(edge: .top) {
+            // Adjustments for content near the top safe area
+            Color.clear // Use a clear color to effectively ignore the safe area
+        }
     }
 }
 

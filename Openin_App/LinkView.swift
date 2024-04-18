@@ -66,34 +66,31 @@ struct LinkView: View {
                             }
                         }
                         HStack{
-//                               chart.line.uptrend.xyaxis
                             Image(systemName: "link")
                                 .font(.system(size: 20))
                              Text("View All Links")
                                 .fontWeight(.bold)
                             
                         }
-                        .padding(EdgeInsets(top: 20, leading: 100 , bottom: 20, trailing: 100))
+                        .padding(EdgeInsets(top: 20, leading: 110 , bottom: 20, trailing: 100))
                         .border(Color.Icon)
                         .cornerRadius(7)
                         .offset(x:2, y:0)
                         HStack{
-//                               chart.line.uptrend.xyaxis
-                            Image(systemName: "chart.line.uptrend.xyaxis")
+                            Image("Whatsapp")
                                 .font(.system(size: 20))
                              Text("Talk With us")
                                 .fontWeight(.bold)
                             
                         }
-                        .padding(EdgeInsets(top: 20, leading: 10 , bottom: 20, trailing: 210))
+                        .padding(EdgeInsets(top: 20, leading: 5 , bottom: 20, trailing: 210))
                         .background(Color.Whatsapp.opacity(0.32))
                         .border(Color.Icon)
                         .cornerRadius(7)
                         .offset(x:0, y:0)
                         //                       MARK: FAQ
                         HStack{
-//                               chart.line.uptrend.xyaxis
-                            Image(systemName: "chart.line.uptrend.xyaxis")
+                            Image(systemName: "questionmark.circle")
                                 .font(.system(size: 20))
                              Text("Frequently Asked Questions")
                                 .fontWeight(.bold)
@@ -122,9 +119,7 @@ struct DotLink: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
             Spacer()
-            Button(action: {
-                // Handle link copy
-            }) {
+            Button(action: {}) {
                 Image(systemName: "doc.on.doc")
                     .foregroundColor(.blue)
             }
@@ -156,13 +151,14 @@ struct LinkRow: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
-                    Image("amazon-logo")
+                    Image("Whatsapp")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
+                        .frame(width: 50, height: 50)
+                        .border(Color.gray.opacity(0.3))
                     Text(linkName)
                         .font(.system(size: 20))
-                        .padding([.leading, .trailing], 30)
+                        .padding([.leading, .trailing], 10)
                     Spacer()
                     Text("\(clicks)")
                         .font(.headline)
