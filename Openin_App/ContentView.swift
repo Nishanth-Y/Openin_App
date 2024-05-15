@@ -61,30 +61,46 @@ struct ContentView: View {
                                    //                       MARK: Chart
                                    Spacer()
                                    let jsonChart = viewModel.response?.data?.overall_url_chart;
-//                                   AxisLabels {
-//                                       ChartGrid {
-//                                           LineChart()
-//                                               .setLineWidth(width: 2)
-//                                               .showChartMarks(true)
-//                                               .showBackground(false)
-//                                               .data(jsonChart?.dataPointsD ?? chart)
-//                                               .rangeY(0...4)
-//                                               .rangeX(0...23)
-//                                               .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: ColorGradient(.blue, .purple)))
-//                                       }
-//                                       .setNumberOfHorizontalLines(11)
-//                                       .setNumberOfVerticalLines(11)
-//                                       .showBaseLine(true)
-//                                   }
-//                                   .setAxisYLabels(["0","1","10"])
-//                                   .setAxisXLabels(["27 Oct", "2 Nov", "9 Nov", "15 Nov", "22 Nov"])
-                                   CardView {
-                                       LineChart()
-                                           .data(jsonChart?.dataPoints ?? chart.dataPoints)
-                                           .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.Faq.opacity(0.4), Color.white)))
-                                            .frame(height: 250)
-                                   }.padding()
-                                   
+//
+                                   VStack{
+                                      AxisLabels {
+                                          ChartGrid {
+                                              LineChart()
+                                                  .setLineWidth(width: 2)
+                                                  .showChartMarks(true)
+                                                  .showBackground(false)
+                                                  .data(jsonChart?.dataPointsD ?? chart.dataPointsD)
+                                                  .rangeY(-1...20)
+                                                  .rangeX(0...23)
+                                                  .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: ColorGradient(.blue, .purple)))
+                                          }
+                                          .setNumberOfHorizontalLines(5)
+                                          .setNumberOfVerticalLines(6)
+                                          .showBaseLine(true)
+                                      }
+                                      .setAxisYLabels([" ", "0", "2", "4", "6", "8"])
+                                      .setAxisXLabels(["00:00", "04:00", "08:00", "12:00", "16:00", "20:00", "23:00"])
+                                      .font(.system(size: 12))
+                                              
+                                  }
+                                  .frame(width: 335, height: 200)
+                                  .padding(.all, 10)
+                                  .background(Color.white)
+                                  .clipShape(
+                                   .rect(
+                                       topLeadingRadius: 20, bottomLeadingRadius: 20, bottomTrailingRadius: 20, topTrailingRadius: 20
+                                   )
+                                  )
+                                  .offset(x:20, y:0)
+
+
+//                                   CardView {
+//                                       LineChart()
+//                                           .data(jsonChart?.dataPoints ?? chart.dataPoints)
+//                                           .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.Faq.opacity(0.4), Color.white)))
+//                                            .frame(height: 250)
+//                                   }.padding()
+//                                   
                                    
                                    Spacer()
                                    //                       MARK: Hstack

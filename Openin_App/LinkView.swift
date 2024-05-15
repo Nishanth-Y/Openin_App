@@ -8,6 +8,33 @@
 import SwiftUI
 
 
+
+struct RemoteImage: View {
+    let urlString: String
+    
+    var body: some View {
+        if let url = URL(string: urlString) {
+            AsyncImage(url: url) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image.resizable()
+                case .failure:
+                    Image(systemName: "photo")
+                        .resizable()
+                @unknown default:
+                    EmptyView()
+                }
+            }
+        } else {
+            Image(systemName: "photo")
+                .resizable()
+        }
+    }
+}
+
+
 struct LinkView: View {
     @StateObject var response: ContentViewModel
     @State var top_links = [Top_links]()
@@ -52,19 +79,17 @@ struct LinkView: View {
                 ScrollView {
                     VStack(spacing: 16) {
                         if isTopLinks {
-                            ForEach(response.response?.data?.top_links ?? top_links){ top_link in
-                                let subtitle = String(top_link.title?.prefix(10) ?? "")
-                                LinkRow(linkName: subtitle+"...", date: top_link.created_at ?? "", clicks: top_link.total_clicks ?? 0, link: top_link.web_link ?? "")
-                            }
-                        
-//                            LinkRow(linkName: "Top Link 2", date: "21 Aug 2022", clicks: 1234, link: "https://toplink2.com")
-                        } else {
-                            ForEach(response.response?.data?.recent_links ?? recent_links){ recent_link in
-                                let subtitle = String(recent_link.title?.prefix(10) ?? "")
+                           ForEach(response.response?.data?.top_links ?? top_links){ top_link in
+                               let subtitle = String(top_link.title?.prefix(10) ?? "")
+                               LinkRow(linkName: subtitle+"...", date: String(top_link.created_at?.prefix(10) ?? ""), clicks: top_link.total_clicks ?? 0, link: top_link.web_link ?? "", originalImage: top_link.original_image!)
+                           }
+                       } else {
+                           ForEach(response.response?.data?.recent_links ?? recent_links){ recent_link in
+                               let subtitle = String(recent_link.title?.prefix(10) ?? "")
 
-                                LinkRow(linkName: subtitle+"...", date: recent_link.created_at ?? "", clicks: recent_link.total_clicks ?? 0, link: recent_link.web_link ?? "")
-                            }
-                        }
+                               LinkRow(linkName: subtitle+"...", date: String(recent_link.created_at?.prefix(10) ?? ""), clicks: recent_link.total_clicks ?? 0, link: recent_link.web_link ?? "", originalImage: recent_link.original_image!)
+                           }
+                       }
                         HStack{
                             Image(systemName: "link")
                                 .font(.system(size: 20))
@@ -145,17 +170,21 @@ struct LinkRow: View {
     let date: String
     let clicks: Int
     let link: String
-        
+    let originalImage: String
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
-                    Image("Whatsapp")
-                        .resizable()
+                    RemoteImage(urlString: originalImage)
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 50, height: 50)
                         .border(Color.gray.opacity(0.3))
+                    //                    Image("Whatsapp")
+                    //                        .resizable()
+                    //                        .aspectRatio(contentMode: .fit)
+                    //                        .frame(width: 50, height: 50)
+                    //                        .border(Color.gray.opacity(0.3))
                     Text(linkName)
                         .font(.system(size: 20))
                         .padding([.leading, .trailing], 10)
@@ -176,21 +205,31 @@ struct LinkRow: View {
             .background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray.opacity(0.3), lineWidth: 1))
         }
     }
+    //    func formatDate(_ dateString: String) -> String {
+    //        let formatter = ISO8601DateFormatter()
+    //        formatter.formatOptions = [.withFractionalSeconds]
+    //        if let date = formatter.date(from: dateString) {
+    //            let formatter = DateFormatter()
+    //            formatter.dateStyle = .long
+    //            formatter.timeStyle = .none
+    //            return formatter.string(from: date)
+    //        }
+    //        return "Invalid date"
+    //    }
     func formatDate(_ dateString: String) -> String {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withFractionalSeconds]
-        if let date = formatter.date(from: dateString) {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .long
-            formatter.timeStyle = .none
-            return formatter.string(from: date)
-        }
-        return "Invalid date"
+        let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd"
+           
+       if let date = dateFormatter.date(from: dateString) {
+           let outputFormatter = DateFormatter()
+           outputFormatter.dateFormat = "dd MMMM yyyy"
+           return outputFormatter.string(from: date)
+       } else {
+           return dateString
+       }
     }
-    
 
 }
-
 
 
 

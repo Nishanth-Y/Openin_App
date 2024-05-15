@@ -82,7 +82,7 @@ struct TopData: View {
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(Color.blue, .primary)
                         .padding(.trailing, 70.0)
-                    Text("11:00 - 12:20")
+                    Text((response.response?.startTime ?? "") + " - " + getCurrentHour())
                         .foregroundStyle(Color.black)
                         .foregroundStyle(.white)
                         .font(.system(size: 18))
@@ -100,6 +100,12 @@ struct TopData: View {
             }.padding()
         }
     }
+}
+
+func getCurrentHour() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm"
+    return formatter.string(from: Date())
 }
 
 #Preview {
